@@ -5,5 +5,13 @@
   "main": "index.html",
   "repository": "git@github.com:rewri/S2IT.git",
   "author": "Rérisson Fumes <rkfumes@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "simple-line-icons": "^2.4.1"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^2.3.2",
+    "gulp-uglify": "^2.0.0"
+  }
 }

@@ -6,9 +6,85 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="assets/css/reset.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+	<link rel="stylesheet" href="assets/css/simple-line-icons.css">
 	<link href="assets/css/styles.css" rel="stylesheet">
 </head>
 <body>
-	
+
+	<header class="header">
+		<section class="container">	
+			<div class="logo">
+				<h1>S2IT</h1>
+				<p>Frontend Test</p>				
+			</div>
+			<div class="user">
+				<p class="float-left margin-right-10 font-500">Olá, Rérisson</p>
+				<img src="assets/img/avatar.png" alt="Avatar Image" width="48" height="48">			
+			</div>			
+		</div>	
+	</header>
+
+	<div class="container">	
+		<main class="main">
+			<section id="item-input">	
+				<form action="">
+					<div class="align-center margin-top-15 margin-bottom-30">
+						<div class="radio-toolbar">
+							<span>
+								<input type="radio" id="out" name="action" value="uot" checked>
+								<label for="out" class="radio-out"><span class="red">Saque<i class="icon-arrow-up text-14 font-600 padding-left-5 hidden-small"></i></span></label>
+							</span>	
+							<span>
+								<input type="radio" id="in" name="action" value="in">
+								<label for="in" class="radio-in"><span class="green">Depósito<i class="icon-arrow-down text-14 font-600 padding-left-5 hidden-small"></i></span></label>
+							</span>								
+						</div>
+					</div>
+
+					<div class="align-center margin-bottom-25">
+						<input type="text" id="input" name="input" placeholder="R$ 0,00" required class="input">
+						<button id="action" name="action" class="main-button"> Sacar </button>
+					</div>
+				</form>				
+			</section>
+			<section id="item-table" class="align-center">	
+				<table id="table" name="table" class="table table-hover table-striped">
+					<thead>
+						<tr>
+							<th class="hidden-small">usu</th>
+							<th>tipo</th>
+							<th>valor</th>
+							<th>ações</th>
+						</tr>						
+					</thead>
+					<tbody>
+						<tr>
+							<td width="10%" class="hidden-small">U</td>
+							<td>Depósito</td>
+							<td width="30%">R$ 10,00</td>
+							<td width="15%">botao</td>
+						</tr>
+						<tr>
+							<td class="hidden-small">U</td>
+							<td>Depósito</td>
+							<td>R$ 10,00</td>
+							<td>botao</td>
+						</tr>
+						<tr>
+							<td class="hidden-small">U</td>
+							<td>Depósito</td>
+							<td>R$ 10,00</td>
+							<td>botao</td>
+						</tr>							
+					</tbody>									
+				</table>							
+			</section>
+			<section id="item-sum" class="align-right margin-top-15">	
+				<h2 id="sum">Total em conta: <span class="main-color font-600">R$ 100,00</span></h2>	
+			</section>						
+		</main>
+	</div>
+
+	<script src="assets/js/app.js"></script>
 </body>
 </html>
