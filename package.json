@@ -1,0 +1,9 @@
+{
+  "name": "s2it",
+  "version": "0.0.1",
+  "description": "Teste Frontend S2IT",
+  "main": "index.html",
+  "repository": "git@github.com:rewri/S2IT.git",
+  "author": "Rérisson Fumes <rkfumes@gmail.com>",
+  "license": "MIT"
+}

@@ -1,0 +1,90 @@
+/*** HELPERS ***/
+
+/** PADDING-MARGIN **/
+$i: 0;
+$step: 5;
+@while $i < 11 {
+	.padding-#{($i * $step)} {
+		padding: ($i * $step) + px !important;
+	}
+	.padding-top-#{($i * $step)} {
+		padding-top: ($i * $step) + px;
+	}
+	.padding-right-#{($i * $step)} {
+		padding-right: ($i * $step) + px;
+	}
+	.padding-bottom-#{($i * $step)} {
+		padding-bottom: ($i * $step) + px;
+	}
+	.padding-left-#{($i * $step)} {
+		padding-left: ($i * $step) + px;
+	}
+	.margin-#{($i * $step)} {
+		margin: ($i * $step) + px !important;
+	}
+	.margin-top-#{($i * $step)} {
+		margin-top: ($i * $step) + px;
+	}
+	.margin-right-#{($i * $step)} {
+		margin-right: ($i * $step) + px;
+	}
+	.margin-bottom-#{($i * $step)} {
+		margin-bottom: ($i * $step) + px;
+	}
+	.margin-left-#{($i * $step)} {
+		margin-left: ($i * $step) + px;
+	}
+	$i: $i + 1;
+}
+
+/*** FONT-SIZES ***/
+$i: 9;
+@while $i < 25 {
+	.text-#{$i} {
+		font-size: $i + px;
+	}
+	$i: $i + 1;
+}
+
+/*** FONT-WEIGHTS ***/
+$i: 1;
+$step: 100;
+@while ($i * $step) < 800 {
+	.font-#{($i * $step)} {
+		font-weight: ($i * $step);
+	}
+	$i: $i + 1;
+}
+
+/*** FLOATS ***/
+.float-left { 
+	float: left; 
+}
+.float-right { 
+	float: right; 
+}
+
+/*** ALIGNS ***/
+.align-left { 
+	text-align: left; 
+}
+.align-right { 
+	text-align: right; 
+}
+.align-center { 
+	text-align: center; 
+}
+.align-justify { 
+	text-align: justify; 
+}
+
+/*** CLEARS ***/
+.clear-both { 
+	clear: both; 
+}
+.clear-left { 
+	clear: left; 
+}
+.clear-right { 
+	clear: right; 
+}

@@ -1,0 +1,24 @@
+$font-family-primary: 'Source Sans Pro', sans-serif !default;
+$font-family-default: 'Helvetica Neue', Helvetica, Arial, sans-serif !default;
+
+body {
+	background-color: $bg-color;
+	font-size: 14px;
+	font-family: $font-family-primary;
+	color: $text-color;
+}
+
+@mixin setLinkStyle {
+	&:hover, &:active, &:visited {
+		@content;
+	}
+}
+
+a {
+	color: $link-color;
+	text-decoration: none;
+	@include setLinkStyle {
+		color: $link-hover-color;
+	}
+}
+
