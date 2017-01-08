@@ -39,7 +39,7 @@
 						</div>
 					</div>
 					<div class="align-center margin-bottom-25">
-						<input type="text" id="input" name="input" placeholder="R$ 0,00" required class="input" v-model="input" onkeypress="return validateFloat(this, event);">
+						<input type="text" v-on:keyup.enter="addAmount()" id="input" name="input" placeholder="R$ 0,00" required class="input" v-model="input" onkeypress="return validateFloat(this, event);">
 						<button id="action" name="action" class="main-button" v-on:click="addAmount()">{{action == 'out' ? 'Sacar' : 'Depositar'}}</button>
 					</div>			
 				</section>

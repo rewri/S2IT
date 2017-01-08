@@ -64,3 +64,5 @@ gulp.task("prod", [], function() {
         .pipe(gulp.dest(paths.js));                            
 
 });
+
+gulp.task("init", ["dev", "prod"]);
