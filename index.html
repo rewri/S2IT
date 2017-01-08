@@ -4,10 +4,10 @@
 	<meta charset="UTF-8">
 	<title>S2IT Frontend</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="./assets/css/reset.css" rel="stylesheet">
+	<link href="./assets/css/reset.min.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
-	<link href="./assets/css/simple-line-icons.css" rel="stylesheet" >
-	<link href="./assets/css/styles.css" rel="stylesheet">
+	<link href="./assets/css/simple-line-icons.min.css" rel="stylesheet" >
+	<link href="./assets/css/styles.min.css" rel="stylesheet">
 </head>
 <body>
 	<div id="app">
@@ -39,8 +39,8 @@
 						</div>
 					</div>
 					<div class="align-center margin-bottom-25">
-						<input type="text" id="input" name="input" placeholder="R$ 0,00" required class="input" v-model="input">
-						<button id="action" name="action" class="main-button" v-on:click="addAmount()">Sacar</button>
+						<input type="text" id="input" name="input" placeholder="R$ 0,00" required class="input" v-model="input" onkeypress="return validateFloat(this, event);">
+						<button id="action" name="action" class="main-button" v-on:click="addAmount()">{{action == 'out' ? 'Sacar' : 'Depositar'}}</button>
 					</div>			
 				</section>
 				<section class="align-center">	
@@ -56,9 +56,17 @@
 						<tbody>
 							<tr v-for="(item, index) in amount">
 								<td width="1%" class="hidden-small">
-									<img src="assets/img/avatar.png" alt="Avatar Image" width="28" height="28">						
+									<img src="assets/img/avatar.png" alt="Avatar Image" width="32" height="32">						
 								</td>
-								<td width="45%">{{item.type}}</td>
+								<td width="45%">
+									<span v-if="item.type == 'Saque'">
+										<i class="icon-arrow-up red text-11 font-600 margin-right-5 hidden-small"></i>
+									</span>
+									<span v-else>
+										<i class="icon-arrow-down green text-11 font-600 margin-right-5 hidden-small"></i>
+									</span>
+									{{item.type}}
+								</td>
 								<td width="44%">R$ {{item.value | currency}}</td>
 								<td width="10%" class="align-right">
 									<button class="delete-button" v-on:click="removeItem(index)">
@@ -75,10 +83,9 @@
 			</main>
 		</div>
 	</div>	
-
 	<script src="./assets/js/vue.min.js"></script>
 	<script src="./assets/js/vue-resource.min.js"></script>
+	<script src="./assets/js/custom.min.js"></script>
 	<script src="./assets/js/app.js"></script>
-
 </body>
 </html>
