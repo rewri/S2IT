@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8">
+	<title>S2IT Frontend</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="./assets/css/reset.min.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+	<link href="./assets/css/simple-line-icons.min.css" rel="stylesheet" >
+	<link href="./assets/css/styles.min.css" rel="stylesheet">
+</head>
+<body>
+	<div id="app">
+		<header class="header">
+			<section class="container">	
+				<div class="logo">
+					<h1>S2IT</h1>
+					<p>Frontend Test</p>				
+				</div>
+				<div class="user">
+					<p class="float-left margin-right-10 font-500">Olá, {{userName}}</p>
+					<img src="assets/img/avatar.png" alt="Avatar Image" width="48" height="48">			
+				</div>			
+			</section>	
+		</header>
+		<div class="container">	
+			<main class="main">
+				<section id="item-input">	
+					<div class="align-center margin-top-15 margin-bottom-30">
+						<div class="radio-toolbar">
+							<span>
+								<input type="radio" id="out" value="out" v-model="action">
+								<label for="out" class="radio-out"><span class="red">Saque<i class="icon-arrow-up text-14 font-600 padding-left-5 hidden-small"></i></span></label>
+							</span>	
+							<span>
+								<input type="radio" id="in" value="in" v-model="action">
+								<label for="in" class="radio-in"><span class="green">Depósito<i class="icon-arrow-down text-14 font-600 padding-left-5 hidden-small"></i></span></label>
+							</span>								
+						</div>
+					</div>
+					<div class="align-center margin-bottom-25">
+						<input type="text" v-on:keyup.enter="addAmount()" id="input" name="input" placeholder="R$ 0,00" required class="input" v-model="input" onkeypress="return validateFloat(this, event);">
+						<button id="action" name="action" class="main-button" v-on:click="addAmount()">{{action == 'out' ? 'Sacar' : 'Depositar'}}</button>
+					</div>			
+				</section>
+				<section class="align-center">	
+					<table id="table" name="table" class="table table-hover table-striped">
+						<thead>
+							<tr>
+								<th class="hidden-small"></th>
+								<th>Tipo</th>
+								<th>Valor</th>
+								<th></th>
+							</tr>						
+						</thead>
+						<tbody>
+							<tr v-for="(item, index) in amount">
+								<td width="1%" class="hidden-small">
+									<img src="assets/img/avatar.png" alt="Avatar Image" width="32" height="32">						
+								</td>
+								<td width="45%">
+									<span v-if="item.type == 'Saque'">
+										<i class="icon-arrow-up red text-11 font-600 margin-right-5 hidden-small"></i>
+									</span>
+									<span v-else>
+										<i class="icon-arrow-down green text-11 font-600 margin-right-5 hidden-small"></i>
+									</span>
+									{{item.type}}
+								</td>
+								<td width="44%">R$ {{item.value | currency}}</td>
+								<td width="10%" class="align-right">
+									<button class="delete-button" v-on:click="removeItem(index)">
+										<i class="icon-trash"></i>
+									</button>
+								</td>
+							</tr>							
+						</tbody>									
+					</table>							
+				</section>
+				<section id="item-sum" class="align-right margin-top-15">	
+					<h2 id="sum">Total <span class="hidden-small">em conta</span>: <span class="main-color font-600">R$ {{total.toFixed(2) | currency}}</span></h2>	
+				</section>						
+			</main>
+		</div>
+	</div>	
+	<script src="./assets/js/vue.min.js"></script>
+	<script src="./assets/js/vue-resource.min.js"></script>
+	<script src="./assets/js/custom.min.js"></script>
+	<script src="./assets/js/app.js"></script>
+</body>
+</html>

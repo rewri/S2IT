@@ -1,0 +1,22 @@
+/*** COLORS ***/
+$primary-color:        #3F51B5;
+$primary-color-dark:   #303F9F;
+$primary-color-light:  #C5CAE9;
+$primary-color-text:   #FFFFFF;
+
+$accent-color:         #FF5722;
+$primary-text-color:   #212121;
+$secondary-text-color: #424242;
+$divider-color:        #BDBDBD;
+
+$main-color: #9E9E9E; 
+$secondary-color: darken($main-color, 10%);
+
+$bg-color: #E0E0E0;
+$header-color: darken($bg-color, 10%);
+
+$link-color: #283593;
+$link-hover-color: darken($link-color, 10%);
+
+$red: #D32F2F;
+$green: #4CAF50;
