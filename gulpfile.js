@@ -17,6 +17,15 @@ gulp.task("init", [], function() {
 
 	gulp.src([
 		paths.node + "simple-line-icons/fonts/*"
-	]).pipe(gulp.dest(paths.fonts))
+	]).pipe(gulp.dest(paths.fonts));
+
+	console.log("Setting up Vue.js files");
+	gulp.src([
+		paths.node + "vue/dist/vue.min.js"
+	]).pipe(gulp.dest(paths.js));
+
+	gulp.src([
+		paths.node + "vue-resource/dist/vue-resource.min.js"
+	]).pipe(gulp.dest(paths.js));
 
 });

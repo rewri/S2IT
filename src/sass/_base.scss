@@ -22,16 +22,6 @@ $font-family-default: 'Helvetica Neue', Helvetica, Arial, sans-serif !default;
 	}	
 }
 
-.red {
-	color: $red;
-}
-.green {
-	color: $green;
-}
-.main-color {
-	color: $primary-color;
-}
-
 body {
 	background-color: $bg-color;
 	font-size: 1em;
@@ -85,85 +75,6 @@ body {
 	}	
 }
 
-@mixin setLinkStyle {
-	&:hover, &:active, &:visited {
-		@content;
-	}
-}
-
-a {
-	color: $link-color;
-	text-decoration: none;
-	@include setLinkStyle {
-		color: $link-hover-color;
-	}
-}
-
-h1 {
-	font-size:180%;
-}
-h2 {
-	font-size:150%;
-}
-h3 {
-	font-size:125%;
-}
-h4 {
-	font-size:100%;
-}
-h5 {
-	font-size:90%;
-}
-h6 {
-	font-size:80%;
-}
-
-.input {
-	font-size: 20px;
-	width: 55%;
-	display: inline;
-	border: none;
-	padding: 5px 0;
-	border-bottom: solid 1px $main-color;
-	transition: all 0.3s cubic-bezier(.64,.09,.08,1);
-	background: linear-gradient(to bottom, rgba(255,255,255,0) 96%, $secondary-color 4%);
-	background-position: -960px 0;
-	background-size: 960px 100%;
-	background-repeat: no-repeat;
-	color: darken($main-color, 20%);
-	&:focus {
-		box-shadow: none;
-		outline: none;
-		background-position: 0 0;
-		&::-webkit-input-placeholder {
-			color: $secondary-color;
-			font-size: 11px;
-			-webkit-transition: all 0.3s ease-in-out;
-			transition: all 0.3s ease-in-out;      
-			transform: translateY(-20px);
-			visibility: visible !important;
-		}
-	}
-}
-
-.main-button {
-	border: none;
-	background: $main-color;
-	cursor: pointer;
-	border-radius: 3px;
-	padding: 6px;
-	width: 110px;
-	font-size: 16px;
-	text-transform: uppercase;
-	color: white;
-	margin-left: 15px;
-	box-shadow: 0 3px 6px 0 rgba(0,0,0,0.2);
-	&:hover { 
-		box-shadow: 0 6px 6px 0 rgba(0,0,0,0.2);
-	}
-}
-
-
 .table {
 	width: 100%;
 	max-width: 100%;
@@ -186,7 +97,7 @@ h6 {
 .table > tfoot > tr > td {
 	text-align: left;
 	padding: 1.2rem;
-	vertical-align: top;
+	vertical-align: middle;
 	border-top: 0;
 	-webkit-transition: all 0.3s ease;
 	-o-transition: all 0.3s ease;

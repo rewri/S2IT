@@ -7,7 +7,9 @@
   "author": "Rérisson Fumes <rkfumes@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "simple-line-icons": "^2.4.1"
+    "simple-line-icons": "^2.4.1",
+    "vue": "^2.1.8",
+    "vue-resource": "^1.0.3"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
