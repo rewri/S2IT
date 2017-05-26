@@ -7,8 +7,8 @@
 S2IT.
 
 ### Configurações
-1. Execute `npm install` para baixar as dependências. (https://docs.npmjs.com/getting-started/installing-node)
-2. Execute `gulp init` para configuração inicial do projeto.
+1. Execute $ `npm install` para baixar as dependências. (https://docs.npmjs.com/getting-started/installing-node)
+2. Execute $ `gulp init` para configuração inicial do projeto.
  
 ### Tecnologias utilizadas
 - Técnicas para Mobile First e uso de Media Queries
